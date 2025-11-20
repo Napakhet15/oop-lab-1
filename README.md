@@ -1,45 +1,64 @@
 # OOP Lab 1
-# Lab Overview
+
+## Lab Overview
 This lab demonstrates the use of Object-Oriented Programming (OOP) in Python by implementing two classes: DataLoader and Table.
-The project focuses on reading, filtering, and aggregating data from a CSV file (Cities.csv).
+The project focuses on reading, filtering, and aggregating data from a CSV file **Cities.csv** and **Countries.csv**.
 
+---
 
-# Project Structure
+## Project Structure
+
 oop_lab_1/
 │
-├── README.md               # This file.
-├── Cities.csv              # The data set
-└── data_processing.py      # the analysis code
+├── README.md # Project documentation
+├── Cities.csv # The data set
+├── Countries.csv # Additional dataset
+└── data_processing.py # the analysis code
 
-# Design Overview
+---
 
-1. DataLoader Class
-Handles loading CSV data files and converting them into a list of dictionaries.
+## Design Overview
 
+### 1. DataLoader Class
+Responsible for:
+- Loading CSV files
+- Converting rows into a list of dictionaries  
+This makes the datasets easy to process using Python.
 
-2. Table Class
-Represents tabular data and provides methods for filtering and aggregating records.
+---
 
-- filter:
-  Returns a new Table object containing only rows that match a given condition (lambda function).
+### 2. Table Class
+Represents tabular data and provides methods to transform and analyze it.
 
-- aggregate():
-  Applies an aggregation function (e.g., sum, max, average, or count) to the specified key and returns the result.
+#### Methods:
+- **filter(condition_function)**  
+  Returns a new `Table` containing only rows that satisfy the given condition (usually a lambda expression).
 
+- **aggregate(aggregation_function, key)**  
+  Extracts values from the specified key and applies an aggregation function (e.g., `sum`, `max`, `min`, `average`, `len`).
 
-# Features
-- Load CSV Files: Load structured data using DataLoader.
-- Filter Data: Select data based on conditions (e.g., cities from Germany).
-- Aggregate Data: Calculate averages, maximums, or count unique items.
+- **join(other_table, key)**  
+  Combines two tables based on a matching column.
 
+---
 
-# How to Test and Run the Code
-1. Ensure you have Python 3.x installed.
-2. Place the Cities.csv file in the same directory as data_processing.py.
-3. Open the terminal in that directory and run:
+## Features
+- **Load CSV Files** using `DataLoader`
+- **Filter Data** based on conditions (e.g., cities in Italy)
+- **Aggregate Data** such as:
+  - Average temperature  
+  - Maximum or minimum value  
+  - Counting records
+- **Join Tables** to combine city + country data
+
+---
+
+## How to Run the Code
+
+1. Make sure Python 3.x is installed.
+2. Place `Cities.csv`, `Countries.csv`, and `data_processing.py` in the same directory.
+3. Open a terminal in that directory.
+4. Run:
 
 ```bash
 python data_processing.py
-
-
-
